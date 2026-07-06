@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techfest 2026 | Chronicles of Synapse | IIT Bombay</title>
+  <meta name="description" content="Welcome to Techfest 2026, Asia's largest science and technology festival by IIT Bombay. Explore the Cyborg Era: Neural Ascension, Chronicles of Synapse, Robotics, Hackathons, and Cybernetic Advancements.">
+  <meta name="keywords" content="Techfest, IIT Bombay, Techfest 2026, Cyborg, Chronicles of Synapse, Robotics, RoboWars, Engineering, Hackathon, College Fest">
+  <meta name="author" content="IIT Bombay Techfest Team">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Cyborg Screen Filters -->
+  <div class="scanlines"></div>
+  <div class="crt-overlay"></div>
+  <div class="laser-sweeper"></div>
+
+  <!-- Background Particle Canvas -->
+  <div id="canvas-container">
+    <canvas id="neural-canvas"></canvas>
+  </div>
+  <div class="cyber-grid"></div>
+
+  <!-- --- HEADER / NAVIGATION HUD --- -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100">
+          <!-- Hexagonal neural core logo -->
+          <polygon points="50,15 80,32.5 80,67.5 50,85 20,67.5 20,32.5" />
+          <circle cx="50" cy="50" r="10" fill="var(--primary)" />
+          <line x1="50" y1="15" x2="50" y2="40" />
+          <line x1="80" y1="67.5" x2="58" y2="55" />
+          <line x1="20" y1="67.5" x2="42" y2="55" />
+        </svg>
+      </div>
+      <span class="logo-text">TECHFEST '26</span>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Core</a></li>
+        <li><a href="#about">Synapse</a></li>
+        <li><a href="#events">Matrix</a></li>
+        <li><a href="#terminal">Console</a></li>
+        <li><a href="#register">Sync-Up</a></li>
+      </ul>
+    </nav>
+
+    <div class="hud-controls">
+      <div class="neural-status" id="neural-status">
+        <div class="pulse-dot"></div>
+        <span>NEURAL LINK: ESTABLISHED</span>
+      </div>
+      <button class="control-btn" id="audio-toggle" title="Toggle Interface Audio" aria-label="Toggle audio feedback">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION: NEURAL PORTAL --- -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-subtitle">
+        <span></span> CHRONICLES OF SYNAPSE
+      </div>
+      <h1 class="hero-title">
+        <span>NEURAL</span>
+        <span class="glitch-wrapper">
+          <span class="glitch highlight" data-text="ASCENSION">ASCENSION</span>
+        </span>
+      </h1>
+      <p class="hero-desc">
+        Welcome to the Cyborg Era. Welcome to IIT Bombay's Techfest 2026. Step into the fusion of biological intellect and quantum computing, where humanity rewrites the laws of biological limits.
+      </p>
+      <div class="hero-actions">
+        <a href="#register" class="cyber-btn" id="btn-sync">
+          <i class="fa-solid fa-bolt"></i> Initialize Sync
+        </a>
+        <a href="#terminal" class="cyber-btn pink" id="btn-console">
+          <i class="fa-solid fa-terminal"></i> Access Core
+        </a>
+      </div>
+      <div class="hud-ticker">
+        <span class="ticker-label">MAINFRAME STATUS:</span>
+        <span class="ticker-text" id="ticker-feed">CYBORG PROTOCOL ENGAGED. LOADING NEURAL DRIVERS...</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Rotating high-tech HUD circles -->
+      <div class="hologram-deck">
+        <div class="hologram-core"></div>
+        <div class="hud-ring-1"></div>
+        <div class="hud-ring-2"></div>
+      </div>
+      <!-- Glowing Cyborg Face Mask SVG -->
+      <div class="cyborg-avatar">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cybernetic face design -->
+          <defs>
+            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="var(--primary)" />
+              <stop offset="100%" stop-color="var(--secondary)" />
+            </linearGradient>
+          </defs>
+          <!-- Outer mechanical shield -->
+          <path d="M 50,40 L 150,40 L 170,80 L 150,160 L 100,190 L 50,160 L 30,80 Z" fill="none" stroke="url(#glow-grad)" stroke-width="2" />
+          <!-- Inner head silhouette -->
+          <path d="M 60,60 L 140,60 L 155,95 L 140,150 L 100,175 L 60,150 L 45,95 Z" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="5 3" />
+          <!-- Forehead chip -->
+          <rect x="90" y="45" width="20" height="15" fill="none" stroke="var(--secondary)" stroke-width="2" />
+          <line x1="100" y1="45" x2="100" y2="30" stroke="var(--secondary)" stroke-width="1.5" />
+          <circle cx="100" cy="30" r="3" fill="var(--secondary)" />
+          <!-- Mechanical eyes -->
+          <!-- Left Eye (Biological placeholder) -->
+          <circle cx="75" cy="90" r="10" fill="none" stroke="var(--primary)" stroke-width="2" />
+          <circle cx="75" cy="90" r="3" fill="var(--primary)" />
+          <!-- Right Eye (Cybernetic implant) -->
+          <rect x="112" y="80" width="26" height="20" fill="none" stroke="var(--secondary)" stroke-width="2" />
+          <line x1="112" y1="90" x2="138" y2="90" stroke="var(--secondary)" stroke-width="1" />
+          <line x1="125" y1="80" x2="125" y2="100" stroke="var(--secondary)" stroke-width="1" />
+          <circle cx="125" cy="90" r="5" fill="var(--secondary)" />
+          <!-- Nose Bridge and respirator plates -->
+          <path d="M 95,90 L 105,90 L 102,120 L 98,120 Z" fill="none" stroke="var(--primary)" stroke-width="2" />
+          <path d="M 80,130 L 120,130 L 115,155 L 85,155 Z" fill="none" stroke="var(--primary)" stroke-width="1.5" />
+          <line x1="90" y1="135" x2="90" y2="150" stroke="var(--primary)" stroke-width="1" />
+          <line x1="100" y1="135" x2="100" y2="150" stroke="var(--primary)" stroke-width="1" />
+          <line x1="110" y1="135" x2="110" y2="150" stroke="var(--primary)" stroke-width="1" />
+          <!-- Circuity paths -->
+          <path d="M 30,80 L 15,80 L 15,110 L 40,110" fill="none" stroke="var(--primary)" stroke-width="1.5" />
+          <path d="M 170,80 L 185,80 L 185,110 L 160,110" fill="none" stroke="var(--secondary)" stroke-width="1.5" />
+          <circle cx="40" cy="110" r="3" fill="var(--primary)" />
+          <circle cx="160" cy="110" r="3" fill="var(--secondary)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- ABOUT SECTION: CHRONICLES OF SYNAPSE --- -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-label"><span>[SECTION_01]</span> THE CYBORG AUGMENTATION</div>
+      <h2 class="section-title">CHRONICLES OF SYNAPSE</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-details">
+        <p class="about-text">
+          Techfest 2026 centers on the concept of human-machine orchestration. We investigate how bio-intelligence harmonizes with algorithmic structures. Explore specialized segments curated to break down biological limitations, optimize human capabilities, and establish new cybernetic frontiers.
+        </p>
+
+        <div class="augmented-points">
+          <div class="point-card">
+            <div class="point-icon"><i class="fa-solid fa-brain"></i></div>
+            <h4 class="point-title">Neural Linkage</h4>
+            <p class="point-desc">Bridging synaptic networks with quantum databases for instantaneous cognition processing.</p>
+          </div>
+          <div class="point-card">
+            <div class="point-icon"><i class="fa-solid fa-eye"></i></div>
+            <h4 class="point-title">Optic Interface</h4>
+            <p class="point-desc">Integrating heads-up displays, spectrum expansions, and real-time environment analytics.</p>
+          </div>
+          <div class="point-card">
+            <div class="point-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h4 class="point-title">Synthetic Nodes</h4>
+            <p class="point-desc">Deploying sub-dermal sensors and nanites for cellular health diagnostic readouts.</p>
+          </div>
+          <div class="point-card">
+            <div class="point-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4 class="point-title">Bio-Armor</h4>
+            <p class="point-desc">Augmenting skeletal structures with lightweight mechanical exoskeletons for extreme endurance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Interactive Cyborg Augmentation Map -->
+      <div class="augmentation-map cyber-panel">
+        <div class="map-svg-container">
+          <!-- Cybernetic Schematic outline of a human face/body profile -->
+          <svg viewBox="0 0 400 400">
+            <!-- Outlines of circuitry pathways behind map -->
+            <path d="M 200,80 H 120 V 160 H 80" stroke-dasharray="3 3" />
+            <path d="M 200,80 H 280 V 120 H 320" stroke-dasharray="3 3" />
+            <path d="M 200,165 H 100 V 220" stroke-dasharray="3 3" />
+            <path d="M 200,200 H 300 V 260 H 340" stroke-dasharray="3 3" />
+            
+            <!-- Silhouette graphic -->
+            <path d="M 170,50 Q 200,30 230,50 Q 250,70 240,110 T 260,170 T 230,220 T 200,260 L 195,330 H 205 L 200,360" stroke="rgba(0, 240, 255, 0.15)" stroke-width="2" />
+            <path d="M 230,50 Q 240,80 230,100 T 210,130 T 215,160 T 205,210" stroke="rgba(255, 0, 91, 0.15)" stroke-width="1.5" />
+          </svg>
+
+          <!-- Interactive Augmentation Node Points -->
+          <div class="aug-node active" id="node-brain" data-title="Cortex Linkage (Model CX-1)" data-desc="Augments human cognitive response by routing motor outputs through quantum processors. Amplifies logic analysis speed by 800%." data-status="ACTIVE // ONLINE">
+            <div class="node-trigger"></div>
+            <span class="node-label">Cognitive Core</span>
+          </div>
+
+          <div class="aug-node" id="node-eye" data-title="Neural-Optic Overlay" data-desc="Replaces typical visual processing with multi-spectral vision overlays, thermal tracing, and direct digital HUD render pipelines." data-status="SYNCING... 94%">
+            <div class="node-trigger"></div>
+            <span class="node-label">Optic Matrix</span>
+          </div>
+
+          <div class="aug-node" id="node-arm" data-title="Pneumatic Cybernetic limb" data-desc="Hydraulic servo integration grants lifting capabilities up to 2.5 metric tons with dynamic feedback stabilizers." data-status="CALIBRATING">
+            <div class="node-trigger"></div>
+            <span class="node-label">Bionic Actuator</span>
+          </div>
+
+          <div class="aug-node" id="node-heart" data-title="Plasma Fusion Core" data-desc="A bio-synthetic cardiovascular pump that distributes energy nanites across muscles, preventing fatigue build-up." data-status="STANDBY">
+            <div class="node-trigger"></div>
+            <span class="node-label">Fusion Core</span>
+          </div>
+
+          <div class="aug-node" id="node-legs" data-title="Kinetic Exoskeleton Struts" data-desc="Carbon-nanotube joint reinforcing structure. Increases jumping heights and sprint speeds by buffering heavy landing shockwaves." data-status="SYS_LOAD: 12%">
+            <div class="node-trigger"></div>
+            <span class="node-label">Kinetic Struts</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Information HUD updated by Javascript -->
+        <div class="aug-infobox active" id="aug-infobox">
+          <div class="infobox-title">
+            <span id="infobox-title">Cortex Linkage (Model CX-1)</span>
+            <span class="infobox-status" id="infobox-status">ACTIVE // ONLINE</span>
+          </div>
+          <p class="infobox-desc" id="infobox-desc">Augments human cognitive response by routing motor outputs through quantum processors. Amplifies logic analysis speed by 800%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- EVENTS & COMPETITIONS SECTION: MATRIX --- -->
+  <section id="events">
+    <div class="section-header">
+      <div class="section-label"><span>[SECTION_02]</span> SYSTEM SUB-MODULES</div>
+      <h2 class="section-title">COMPETITIONS MATRIX</h2>
+    </div>
+
+    <!-- Filter HUD tabs -->
+    <div class="event-filters">
+      <button class="filter-btn active" data-filter="all">ALL SECTORS</button>
+      <button class="filter-btn" data-filter="robotics">ROBOTICS</button>
+      <button class="filter-btn" data-filter="coding">CODING</button>
+      <button class="filter-btn" data-filter="aerospace">AEROSPACE</button>
+    </div>
+
+    <!-- Event Cards Grid -->
+    <div class="events-grid">
+      
+      <!-- RoboWars Card -->
+      <div class="cyber-panel event-card" data-category="robotics">
+        <div class="event-top">
+          <span class="event-id">[SYS_ROB_01]</span>
+          <div class="event-icon"><i class="fa-solid fa-robot"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">ROBOWARS</h3>
+          <p class="event-summary">The ultimate battleground. Watch heavy metal monsters clash and tear each other apart in the custom mechanical combat cage.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 10,00,000</strong></span>
+            <span>SLOTS: <strong>LIMITED</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="RoboWars">Initialize Sync</a>
+        </div>
+      </div>
+
+      <!-- Meshmerize Card -->
+      <div class="cyber-panel event-card" data-category="robotics">
+        <div class="event-top">
+          <span class="event-id">[SYS_ROB_02]</span>
+          <div class="event-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">MESHMERIZE</h3>
+          <p class="event-summary">Design high-speed line followers and grid navigators capable of solving labyrinth pathways in record time limits.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 4,50,000</strong></span>
+            <span>SLOTS: <strong>OPEN</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="Meshmerize">Initialize Sync</a>
+        </div>
+      </div>
+
+      <!-- Coding Synapse Card -->
+      <div class="cyber-panel event-card" data-category="coding">
+        <div class="event-top">
+          <span class="event-id">[SYS_COD_01]</span>
+          <div class="event-icon"><i class="fa-solid fa-code"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">CODING SYNAPSE</h3>
+          <p class="event-summary">Decrypt complex machine algorithms, build predictive AI nodes, and resolve deep debugging puzzles in intense speed rounds.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 5,00,000</strong></span>
+            <span>SLOTS: <strong>OPEN</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="Coding Synapse">Initialize Sync</a>
+        </div>
+      </div>
+
+      <!-- AeroDynamics Challenge Card -->
+      <div class="cyber-panel event-card" data-category="aerospace">
+        <div class="event-top">
+          <span class="event-id">[SYS_AER_01]</span>
+          <div class="event-icon"><i class="fa-solid fa-paper-plane"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">AERODYNAMICS</h3>
+          <p class="event-summary">Engineer unmanned drone structures and aerodynamic gliders. Navigate high-precision vertical obstacle flight zones.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 6,00,000</strong></span>
+            <span>SLOTS: <strong>RESTRICTED</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="AeroDynamics">Initialize Sync</a>
+        </div>
+      </div>
+
+      <!-- Biohack Synapse -->
+      <div class="cyber-panel event-card" data-category="coding">
+        <div class="event-top">
+          <span class="event-id">[SYS_COD_02]</span>
+          <div class="event-icon"><i class="fa-solid fa-dna"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">NEURAL BIOHACK</h3>
+          <p class="event-summary">Create interfaces to interpret raw EMG / EEG biological sensor signals, controlling cybernetic apparatus prototypes.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 7,50,000</strong></span>
+            <span>SLOTS: <strong>OPEN</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="Neural Biohack">Initialize Sync</a>
+        </div>
+      </div>
+
+      <!-- Quantum Crypto -->
+      <div class="cyber-panel event-card" data-category="aerospace">
+        <div class="event-top">
+          <span class="event-id">[SYS_AER_02]</span>
+          <div class="event-icon"><i class="fa-solid fa-rocket"></i></div>
+        </div>
+        <div class="event-body">
+          <h3 class="event-name">ATMOS ROVER</h3>
+          <p class="event-summary">Design planetary exploration rovers capable of traversing harsh uneven topographies while collecting core samples.</p>
+        </div>
+        <div class="event-bottom">
+          <div class="event-meta">
+            <span>PRIZE: <strong>INR 8,00,000</strong></span>
+            <span>SLOTS: <strong>LIMITED</strong></span>
+          </div>
+          <a href="#register" class="cyber-btn event-register-btn" data-event="Atmos Rover">Initialize Sync</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- TERMINAL SECTION: MAIN INTERACTIVE CONSOLE --- -->
+  <section id="terminal">
+    <div class="section-header">
+      <div class="section-label"><span>[SECTION_03]</span> DIRECT LINK</div>
+      <h2 class="section-title">INTERACTIVE CORE TERMINAL</h2>
+    </div>
+
+    <div class="terminal-wrapper">
+      <div class="terminal-header">
+        <div class="terminal-bullets">
+          <span class="bullet red"></span>
+          <span class="bullet yellow"></span>
+          <span class="bullet green"></span>
+        </div>
+        <div class="terminal-title">CYBORG_ROOT@MAINFRAME:~</div>
+        <div class="terminal-bullets" style="opacity: 0;"> <!-- Spacer to balance layout -->
+          <span class="bullet"></span><span class="bullet"></span><span class="bullet"></span>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line"><span class="system-prompt">SYSTEM BOOT INITIATED:</span> VER 4.02.8-SYNAPSE</div>
+          <div class="terminal-line">ESTABLISHING QUANTUM LINKAGE TO IIT BOMBAY... [OK]</div>
+          <div class="terminal-line">CYBORG PROTOCOLS INITIALIZED. READY TO INTERACTION.</div>
+          <div class="terminal-line">Type <span style="color: var(--secondary)">help</span> to list active mainframe commands.</div>
+          <br>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prefix">guest@mainframe:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" placeholder="enter cybernetic prompt..." autocomplete="off" spellcheck="false" aria-label="Terminal command prompt">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- REGISTRATION SECTION: SYNC-UP --- -->
+  <section id="register">
+    <div class="section-header">
+      <div class="section-label"><span>[SECTION_04]</span> LOG DATA STRUCTURE</div>
+      <h2 class="section-title">INITIALIZE NEURAL SYNC</h2>
+    </div>
+
+    <div class="registration-container cyber-panel">
+      <div class="register-title-panel">
+        <h3>SYNAPSE UPLOAD</h3>
+        <p>Establish your telemetry data stream to connect your nodes to IIT Bombay's local directory.</p>
+      </div>
+
+      <form class="cyber-form" id="registration-form">
+        <div class="form-row">
+          <div class="input-wrapper">
+            <label for="name">COGNITIVE IDENTITY (FULL NAME)</label>
+            <input type="text" id="name" required placeholder="Subject name..." autocomplete="name">
+          </div>
+          <div class="input-wrapper">
+            <label for="email">NEURAL LINK FREQUENCY (EMAIL)</label>
+            <input type="email" id="email" required placeholder="frequency@domain.net" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-wrapper">
+            <label for="event-select">TARGET SUB-MODULE (EVENT)</label>
+            <select id="event-select" required>
+              <option value="" disabled selected>Select event matrix...</option>
+              <option value="RoboWars">RoboWars [SYS_ROB_01]</option>
+              <option value="Meshmerize">Meshmerize [SYS_ROB_02]</option>
+              <option value="Coding Synapse">Coding Synapse [SYS_COD_01]</option>
+              <option value="AeroDynamics">AeroDynamics [SYS_AER_01]</option>
+              <option value="Neural Biohack">Neural Biohack [SYS_COD_02]</option>
+              <option value="Atmos Rover">Atmos Rover [SYS_AER_02]</option>
+            </select>
+          </div>
+          <div class="input-wrapper">
+            <label for="org">BIOLOGICAL ORG (COLLEGE/INSTITUTION)</label>
+            <input type="text" id="org" required placeholder="Institute node..." autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-diagnostics">
+          <div class="sync-status-indicator">
+            <div class="status-dot" id="status-dot"></div>
+            <span id="status-text">CALIBRATING TRANSMITTER...</span>
+          </div>
+          <div class="integrity-metric">
+            INTEGRITY: <span style="color: var(--tertiary);" id="integrity-value">SECURED (AES-256)</span>
+          </div>
+        </div>
+
+        <button type="submit" class="cyber-btn pink form-submit-btn">
+          <i class="fa-solid fa-circle-check"></i> Initialize Upload Sequence
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- --- REGISTRATION SUCCESS MODAL --- -->
+  <div class="modal-overlay" id="success-modal-overlay">
+    <div class="cyber-panel success-modal">
+      <div class="modal-icon">
+        <i class="fa-solid fa-network-wired"></i>
+      </div>
+      <h3 class="modal-title">Neural Link Complete</h3>
+      <p class="modal-text">
+        Identity synchronization successful. Your cognitive patterns have been integrated into the database registry. Telemetry verification details sent to your neural link channel.
+      </p>
+      <button class="cyber-btn" id="modal-close">Close Connection</button>
+    </div>
+  </div>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-container">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100">
+              <polygon points="50,15 80,32.5 80,67.5 50,85 20,67.5 20,32.5" />
+              <circle cx="50" cy="50" r="10" fill="var(--primary)" />
+            </svg>
+          </div>
+          <span class="logo-text">TECHFEST '26</span>
+        </div>
+        <p class="footer-desc">
+          IIT Bombay's premier annual science and technology festival. Advancing human and computational integration since 1998.
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com" class="social-link" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://twitter.com" class="social-link" target="_blank" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com" class="social-link" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-column">
+          <h4 class="footer-heading">DIRECTORY</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Core Section</a></li>
+            <li><a href="#about">Synapse Augmentation</a></li>
+            <li><a href="#events">Competitions Matrix</a></li>
+            <li><a href="#terminal">Console Mainframe</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">RESOURCES</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Theme Guidebook</a></li>
+            <li><a href="https://techfest.org" target="_blank">Official Techfest Portal</a></li>
+            <li><a href="https://iitb.ac.in" target="_blank">IIT Bombay Site</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-credits">
+        Designed & developed for IIT Bombay. Synthesized by <span>Antigravity</span>.
+      </div>
+      <div class="footer-copyright">
+        © 2026 TECHFEST IIT BOMBAY. ALL TRANSMISSIONS SECURED.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
