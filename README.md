@@ -89,4 +89,3 @@ Once on the site, navigate to the **Core Terminal** section and try:
 
 ---
 
-*Built with ⚡ by Antigravity for IIT Bombay Techfest 2026*
